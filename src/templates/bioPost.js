@@ -12,10 +12,6 @@ class BioPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        {/* <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        /> */}
         <article>
           <header>
             <h1
@@ -27,14 +23,6 @@ class BioPostTemplate extends React.Component {
               {post.frontmatter.title}
             </h1>
             <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
-            {/* <p
-              style={{
-                display: `block`,
-                marginBottom: 20,
-              }}
-            >
-              {post.frontmatter.date}
-            </p> */}
           </header>
           <section style={{ fontSize: 16 }} dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
