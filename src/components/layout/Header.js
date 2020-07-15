@@ -14,6 +14,7 @@ const Header = props => (
         alt="Smiley face"
         height="36"
         width="55"
+        style={{marginTop: 5}}
       />
     </div>
     <div className="content">
