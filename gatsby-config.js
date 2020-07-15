@@ -30,14 +30,6 @@ module.exports = {
         name: `bios`,
       },
     },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Sku'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: false,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

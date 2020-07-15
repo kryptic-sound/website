@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import Album from './album'
 import Contact from './contact'
 import About from './about'
-import Merch from './merch'
 
 class Main extends React.Component {
   render() {
@@ -28,7 +27,7 @@ class Main extends React.Component {
         id="main"
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
-        <article
+        {/* <article
           id="merch"
           className={`${this.props.article === 'merch' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
@@ -37,7 +36,7 @@ class Main extends React.Component {
         >
           <Merch />
           {close}
-        </article>
+        </article> */}
 
         <article
           id="team"

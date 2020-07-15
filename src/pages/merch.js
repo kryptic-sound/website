@@ -14,8 +14,8 @@ const Merch = () => (
       <CssBaseline />
       <Header />
       {/* <CartOverview /> */}
-      <Skus />
-      <NavFooter />
+      {/* <Skus /> */}
+      {/* <NavFooter /> */}
       <Footer />
     </div>
     <div id="bg"></div>

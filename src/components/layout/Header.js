@@ -1,7 +1,9 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-import logo from '../../images/ks_logo.png'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+
+import logo from '../../images/ks_logo.png'
+
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -12,28 +14,29 @@ const Header = props => (
         alt="Smiley face"
         height="36"
         width="55"
+        style={{marginTop: 18}}
       />
     </div>
     <div className="content">
       <div className="inner">
-        <h1>Kryptic Sound</h1>
-        <h4>A collective for freethinkers</h4>
+        <h1 style={{ color: 'white' }}>Kryptic Sound</h1>
+        <h4 style={{ color: 'white' }}>A collective for freethinkers</h4>
       </div>
     </div>
     <nav>
       <ul style={{ alignItems: 'center' }}>
         <li>
           <Link to="/team">
-          <button
-            style={{ fontWeight: 'bold', marginTop: 2, marginBottom: 2 }}
-          >
-            Team
+            <button
+              style={{ fontWeight: 'bold'}}
+            >
+              Team
           </button>
           </Link>
         </li>
         <li>
           <button
-            style={{ fontWeight: 'bold', marginTop: 2, marginBottom: 2 }}
+            style={{ fontWeight: 'bold'}}
             onClick={() => {
               props.onOpenArticle('about')
             }}
@@ -42,17 +45,17 @@ const Header = props => (
           </button>
         </li>
         <li>
-          <Link to="/merch">
-          <button
-            style={{ fontWeight: 'bold', marginTop: 2, marginBottom: 2 }}
-          >
-            Merch
+          <a href="https://kryptic-sound.myshopify.com">
+            <button
+              style={{ fontWeight: 'bold' }}
+            >
+              Merch
           </button>
-          </Link>
+          </a>
         </li>
         <li>
           <button
-            style={{ fontWeight: 'bold', marginTop: 2, marginBottom: 2 }}
+            style={{ fontWeight: 'bold'}}
             onClick={() => {
               props.onOpenArticle('contact')
             }}
