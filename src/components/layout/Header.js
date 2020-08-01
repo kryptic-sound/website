@@ -45,7 +45,7 @@ const Header = props => (
           </button>
         </li>
         <li>
-          <a href="https://kryptic-sound.myshopify.com">
+          <a href="https://kryptic-sound.myshopify.com/collections/all">
             <button
               style={{ fontWeight: 'bold' }}
             >
