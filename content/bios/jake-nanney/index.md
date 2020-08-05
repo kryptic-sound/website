@@ -1,7 +1,7 @@
 ---
 title: Jake Nanney
 date: "2020-01-01T22:40:32.169Z"
-description: Co-Founder
+description: Founder
 featuredImage: "./work.jpeg"
 ---
 
