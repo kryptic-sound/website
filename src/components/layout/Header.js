@@ -49,7 +49,7 @@ const Header = props => (
             <button
               style={{ fontWeight: 'bold' }}
             >
-              Merch
+              Store
           </button>
           </a>
         </li>
