@@ -5,6 +5,8 @@ import Header from '../components/layout/Header'
 import Main from '../components/Main'
 import Footer from '../components/layout/Footer'
 
+import TransitionsModal from '../components/EventModal'
+
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
@@ -95,6 +97,7 @@ class IndexPage extends React.Component {
         <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
           <div id="wrapper">
             <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+            <TransitionsModal />
             <Main
               isArticleVisible={this.state.isArticleVisible}
               timeout={this.state.timeout}
