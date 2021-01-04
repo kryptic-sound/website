@@ -24,8 +24,6 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
@@ -50,16 +48,15 @@ const useStyles = makeStyles(theme => ({
 
 export default function TeamPage({ data }) {
   const classes = useStyles()
-  console.log(data)
   return (
     <Layout>
       <div id="wrapper">
         <CssBaseline />
         <Container className={classes.cardGrid} maxWidth="lg">
-          <Grid container spacing={4}>
+          <Grid container spacing={6}>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <Grid item key={node} xs={12} sm={6} md={4}>
-                <CardActionArea component="a">
+                <CardActionArea component="a" className={classes.card}>
                   <Link
                     to={`${node.fields.slug}`}
                     style={{ textDecoration: `none` }}
@@ -72,7 +69,7 @@ export default function TeamPage({ data }) {
                       />
                       <CardContent className={classes.cardContent}>
                         <Typography
-                          variant="h5"
+                          variant="h4"
                           component="h2"
                           className={classes.cardTitle}
                         >
