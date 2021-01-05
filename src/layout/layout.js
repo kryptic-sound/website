@@ -18,13 +18,13 @@ import Footer from '../components/layout/Footer'
 import './layout.css'
 
 const useStyles = makeStyles((theme) => ({
-link: {
-  fontSize: 16,
-  color: 'white',
-  marginRight: 13,
-  textDecoration: 'none',
-  boxShadow: 'none'
-}
+  link: {
+    fontSize: 16,
+    color: 'white',
+    marginRight: 13,
+    textDecoration: 'none',
+    boxShadow: 'none'
+  }
 }));
 
 const Layout = ({ children }) => {
@@ -41,21 +41,21 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer className={classes.footer}>
-        <Container maxWidth="sm" justifyContent="center">
-        <Grid
-            container
-            spacing={4}
-            alignContent="center"
-            alignItems="center"
-            justify="center"
-          >
-          <Link className={classes.link} to="/">Home</Link>
-          <Link className={classes.link} to="/mgmt">MGMT</Link>
-          <Link className={classes.link} to="/about">About</Link>
-          <Link className={classes.link} to="/merch">Merch</Link>
-          <Link className={classes.link} to="/contact">Contact</Link>
-          </Grid>
-        </Container>
+          <Container maxWidth="sm" justifyContent="center">
+            <Grid
+              container
+              spacing={4}
+              alignContent="center"
+              alignItems="center"
+              justify="center"
+            >
+              <Link className={classes.link} to="/">Home</Link>
+              <Link className={classes.link} to="/mgmt">MGMT</Link>
+              <Link className={classes.link} to="/about">About</Link>
+              <a className={classes.link} href="https://kryptic-sound.myshopify.com/collections/all">Merch</a>
+              <Link className={classes.link} to="/contact">Contact</Link>
+            </Grid>
+          </Container>
         </footer>
         <Footer />
       </div>
