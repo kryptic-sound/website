@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
             justify="center"
           >
           <Link className={classes.link} to="/">Home</Link>
-          <Link className={classes.link} to="/team">Team</Link>
+          <Link className={classes.link} to="/mgmt">MGMT</Link>
           <Link className={classes.link} to="/about">About</Link>
           <Link className={classes.link} to="/merch">Merch</Link>
           <Link className={classes.link} to="/contact">Contact</Link>
