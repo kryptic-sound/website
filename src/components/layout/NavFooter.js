@@ -45,10 +45,10 @@ export default function NavFooter() {
             alignItems="center"
             justify="center"
           >
-          <Link className={classes.link} to="/team">Team</Link>
-          <Link className={classes.link} to="/">About</Link>
+          <Link className={classes.link} to="/mgmt">MGMT</Link>
+          <Link className={classes.link} to="/artists">Artists</Link>
           <Link className={classes.link} to="/merch">Merch</Link>
-          <Link className={classes.link} to="/">Contact</Link>
+          <Link className={classes.link} to="/">Home</Link>
           </Grid>
         </Container>
       </footer>
