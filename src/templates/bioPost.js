@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../layout/layout"
-// import SEO from "../components/seo"
 
 class BioPostTemplate extends React.Component {
   render() {
