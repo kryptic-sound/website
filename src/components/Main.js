@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Album from './album'
+// CONTACT FORM
 import Contact from './contact'
-import About from './about'
 
 class Main extends React.Component {
   render() {
@@ -27,44 +26,11 @@ class Main extends React.Component {
         id="main"
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
-        {/* <article
-          id="merch"
-          className={`${this.props.article === 'merch' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
-          style={{ display: 'none' }}
-        >
-          <Merch />
-          {close}
-        </article> */}
-
-        <article
-          id="team"
-          className={`${this.props.article === 'team' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
-          style={{ display: 'none' }}
-        >
-          <Album />
-          {close}
-        </article>
-
-        <article
-          id="about"
-          className={`${this.props.article === 'about' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
-          style={{ display: 'none' }}
-        >
-          <About />
-          {close}
-        </article>
 
         <article
           id="contact"
-          className={`${this.props.article === 'contact' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
+          className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
+            }`}
           style={{ display: 'none' }}
         >
           <Contact />
