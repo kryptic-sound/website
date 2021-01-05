@@ -38,17 +38,17 @@ export default function NavFooter() {
       <CssBaseline />
       <footer className={classes.footer}>
         <Container >
-        <Grid
+          <Grid
             container
             spacing={6}
             alignContent="center"
             alignItems="center"
             justify="center"
           >
-          <Link className={classes.link} to="/mgmt">MGMT</Link>
-          <Link className={classes.link} to="/artists">Artists</Link>
-          <Link className={classes.link} to="/merch">Merch</Link>
-          <Link className={classes.link} to="/">Home</Link>
+            <Link className={classes.link} to="/mgmt">MGMT</Link>
+            <Link className={classes.link} to="/artists">Artists</Link>
+            <a className={classes.link} href="https://kryptic-sound.myshopify.com/collections/all">Store</a>
+            <Link className={classes.link} to="/">Home</Link>
           </Grid>
         </Container>
       </footer>
