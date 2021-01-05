@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-
 const Link = React.forwardRef(function Link(props, ref) {
   const classes = useStyles()
   return <MuiLink className={classes.link} component={GatsbyLink} ref={ref} {...props} />;
