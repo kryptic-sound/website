@@ -51,8 +51,8 @@ const Layout = ({ children }) => {
             >
               <Link className={classes.link} to="/">Home</Link>
               <Link className={classes.link} to="/mgmt">MGMT</Link>
-              <Link className={classes.link} to="/about">About</Link>
-              <a className={classes.link} href="https://kryptic-sound.myshopify.com/collections/all">Merch</a>
+              <Link className={classes.link} to="/about">Artists</Link>
+              <a className={classes.link} href="https://kryptic-sound.myshopify.com/collections/all">Store</a>
               <Link className={classes.link} to="/contact">Contact</Link>
             </Grid>
           </Container>
