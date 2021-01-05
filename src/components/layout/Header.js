@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 import logo from '../../images/ks_logo.png'
 
-
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
@@ -14,7 +13,7 @@ const Header = props => (
         alt="Smiley face"
         height="36"
         width="55"
-        style={{marginTop: 5}}
+        style={{ marginTop: 5 }}
       />
     </div>
     <div className="content">
@@ -26,23 +25,22 @@ const Header = props => (
     <nav>
       <ul style={{ alignItems: 'center' }}>
         <li>
-          <Link to="/team">
+          <Link to="/mgmt">
             <button
-              style={{ fontWeight: 'bold'}}
+              style={{ fontWeight: 'bold' }}
             >
-              Team
+              MGMT
           </button>
           </Link>
         </li>
         <li>
-          <button
-            style={{ fontWeight: 'bold'}}
-            onClick={() => {
-              props.onOpenArticle('about')
-            }}
-          >
-            About
+          <Link to="/artists">
+            <button
+              style={{ fontWeight: 'bold' }}
+            >
+              Artists
           </button>
+          </Link>
         </li>
         <li>
           <a href="https://kryptic-sound.myshopify.com/collections/all">
@@ -55,7 +53,7 @@ const Header = props => (
         </li>
         <li>
           <button
-            style={{ fontWeight: 'bold'}}
+            style={{ fontWeight: 'bold' }}
             onClick={() => {
               props.onOpenArticle('contact')
             }}
