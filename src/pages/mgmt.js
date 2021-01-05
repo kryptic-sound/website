@@ -107,8 +107,8 @@ export default function MgmtPage({ data }) {
   )
 }
 
-export const teamQuery = graphql`
-  query AllMarkdown {
+export const mgmtQuery = graphql`
+  query MgmtMarkdown {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/bios/" } }
       sort: { fields: [frontmatter___date], order: ASC }
