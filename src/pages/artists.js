@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '97.25%',
+    height: '95.25%',
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
@@ -63,32 +63,31 @@ export default function MgmtPage({ data }) {
           <Grid container spacing={8}>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <Grid item key={node} xs={12} sm={6} md={6}>
-                <CardActionArea component="a" className={classes.card}>
-                  <Link
-                    to={`${node.fields.slug}`}
-                    style={{ textDecoration: `none` }}
-                  >
 
-                    <Card className={classes.card}>
+                <Card className={classes.card}>
+                  <CardActionArea component="a">
+                    <Link
+                      to={`${node.fields.slug}`}
+                      style={{ textDecoration: `none` }}
+                    >
                       <Img
                         sizes={
                           node.frontmatter.featuredImage.childImageSharp.sizes
                         }
                       />
+                    </Link>
+                  </CardActionArea>
+                  <CardContent className={classes.cardContent}>
+                    <SpotifyPlayer
+                      uri={node.frontmatter.uri}
+                      size={size}
+                      view={view}
+                      theme={theme}
+                    />
 
-                      <CardContent className={classes.cardContent}>
-                        <SpotifyPlayer
-                          uri={node.frontmatter.uri}
-                          size={size}
-                          view={view}
-                          theme={theme}
-                        />
+                  </CardContent>
+                </Card>
 
-                      </CardContent>
-                    </Card>
-
-                  </Link>
-                </CardActionArea>
               </Grid>
             ))}
           </Grid>
