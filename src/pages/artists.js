@@ -1,68 +1,107 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import NavFooter from '../components/layout/NavFooter'
-import Footer from '../components/layout/Footer'
+import Img from 'gatsby-image'
+import { graphql, Link } from 'gatsby'
 
-import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardContent from '@material-ui/core/CardContent'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
+import Container from '@material-ui/core/Container'
 import SpotifyPlayer from 'react-spotify-player';
+
+import Footer from '../components/layout/Footer'
+import NavFooter from '../components/layout/NavFooter'
 
 const useStyles = makeStyles(theme => ({
   cardGrid: {
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: '97.25%',
+  },
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
+  cardContent: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
+  cardTitle: {
+    color: 'black',
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+  root: {
+    flexGrow: 1,
+  },
+  iconColor: {
+    color: 'black',
   },
 }))
 
-// size may also be a plain string using the presets 'large' or 'compact'
 const size = {
-  width: '75%',
+  width: '100%',
   height: 300,
 };
 const view = 'list'; // or 'coverart'
 const theme = 'black'; // or 'white'
 
-export default function ArtistsPage({ data }) {
+export default function MgmtPage({ data }) {
   const classes = useStyles()
-  console.log(data)
   return (
-    <Layout>
+    <>
       <div id="wrapper">
         <CssBaseline />
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={8}>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Grid item key={node} xs={12} sm={6} md={6}>
+                <CardActionArea component="a" className={classes.card}>
+                  <Link
+                    to={`${node.fields.slug}`}
+                    style={{ textDecoration: `none` }}
+                  >
 
-        <Container className={classes.cardGrid} maxWidth="lg">
-          <Grid container spacing={6}>
-            <Grid item sm={6} md={9}>
-              <SpotifyPlayer
-                uri="spotify:album:6MAyH6seu3XcLU48vkRGXj?si=xArO2HJJQLeMFUpC1ScUpg"
-                size={size}
-                view={view}
-                theme={theme}
-              />
-            </Grid>
-            <Grid item sm={6} md={9}>
-              <SpotifyPlayer
-                uri="spotify:album:6LAH3lTK8Gftq4yFAIo9Ih?si=9aHoNdd5SIeNnDiPowA3sg"
-                size={size}
-                view={view}
-                theme={theme}
-              />
-            </Grid>
+                    <Card className={classes.card}>
+                      <Img
+                        sizes={
+                          node.frontmatter.featuredImage.childImageSharp.sizes
+                        }
+                      />
+
+                      <CardContent className={classes.cardContent}>
+                        <SpotifyPlayer
+                          uri={node.frontmatter.uri}
+                          size={size}
+                          view={view}
+                          theme={theme}
+                        />
+
+                      </CardContent>
+                    </Card>
+
+                  </Link>
+                </CardActionArea>
+              </Grid>
+            ))}
           </Grid>
         </Container>
-
         <NavFooter />
         <Footer />
       </div>
       <div id="bg"></div>
-    </Layout>
+    </>
   )
 }
 
-export const artistsQuery = graphql`
+export const mgmtQuery = graphql`
   query ArtistsMarkdown {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/artists/" } }
@@ -77,9 +116,10 @@ export const artistsQuery = graphql`
           frontmatter {
             title
             description
+            uri
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 630, maxHeight: 700) {
+                sizes(maxWidth: 630, maxHeight: 580) {
                   ...GatsbyImageSharpSizes
                 }
               }
