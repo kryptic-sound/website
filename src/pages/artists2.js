@@ -7,28 +7,29 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
-import ChevronIcon from '@material-ui/icons/ChevronRight'
-import IconButton from '@material-ui/core/IconButton'
+import SpotifyPlayer from 'react-spotify-player';
 
 import Footer from '../components/layout/Footer'
 import NavFooter from '../components/layout/NavFooter'
 
 const useStyles = makeStyles(theme => ({
   cardGrid: {
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '100%',
+    height: '97.25%',
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
   },
   cardContent: {
-    flexGrow: 1,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
   },
   cardTitle: {
     color: 'black',
@@ -45,6 +46,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const size = {
+  width: '100%',
+  height: 300,
+};
+const view = 'list'; // or 'coverart'
+const theme = 'black'; // or 'white'
+
 export default function MgmtPage({ data }) {
   const classes = useStyles()
   return (
@@ -60,38 +68,25 @@ export default function MgmtPage({ data }) {
                     to={`${node.fields.slug}`}
                     style={{ textDecoration: `none` }}
                   >
+
                     <Card className={classes.card}>
                       <Img
                         sizes={
                           node.frontmatter.featuredImage.childImageSharp.sizes
                         }
                       />
+
                       <CardContent className={classes.cardContent}>
-                        <Typography
-                          variant="h4"
-                          component="h2"
-                          className={classes.cardTitle}
-                        >
-                          {node.frontmatter.title}
-                        </Typography>
-                        <div className={classes.root}>
-                          <Grid container spacing={3}>
-                            <Grid item xs={8} sm={9}>
-                              <Typography>
-                                <Typography style={{ marginTop: 8 }}>
-                                  {node.frontmatter.description}
-                                </Typography>
-                              </Typography>
-                            </Grid>
-                            <Grid item xs={3}>
-                              <IconButton>
-                                <ChevronIcon className={classes.iconColor} />
-                              </IconButton>
-                            </Grid>
-                          </Grid>
-                        </div>
+                        <SpotifyPlayer
+                          uri={node.frontmatter.uri}
+                          size={size}
+                          view={view}
+                          theme={theme}
+                        />
+
                       </CardContent>
                     </Card>
+
                   </Link>
                 </CardActionArea>
               </Grid>
@@ -110,7 +105,7 @@ export const mgmtQuery = graphql`
   query MgmtMarkdown2 {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/artists/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: ASC }
     ) {
       edges {
         node {
@@ -121,9 +116,10 @@ export const mgmtQuery = graphql`
           frontmatter {
             title
             description
+            uri
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 630, maxHeight: 600) {
+                sizes(maxWidth: 630, maxHeight: 580) {
                   ...GatsbyImageSharpSizes
                 }
               }
