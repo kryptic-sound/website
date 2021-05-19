@@ -1,18 +1,11 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 // import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Link from '../components/Link'
-import Footer from '../components/layout/Footer'
+import Link from '../components/atoms/Link'
+import Footer from '../components/atoms/Copyright'
 
 // import Header from "./nav/header"
 import './layout.css'
@@ -50,7 +43,7 @@ const Layout = ({ children }) => {
               justify="center"
             >
               <Link className={classes.link} to="/">Home</Link>
-              <Link className={classes.link} to="/mgmt">MGMT</Link>
+              <Link className={classes.link} to="/team">Team</Link>
               <Link className={classes.link} to="/about">Artists</Link>
               <a className={classes.link} href="https://kryptic-sound.myshopify.com/collections/all">Store</a>
               <Link className={classes.link} to="/contact">Contact</Link>
