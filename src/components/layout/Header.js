@@ -10,7 +10,7 @@ const Header = props => (
       <img
         className="icon"
         src={logo}
-        alt="Smiley face"
+        alt="Kryptic Sound logo"
         height="36"
         width="55"
         style={{ marginTop: 5 }}
@@ -25,31 +25,22 @@ const Header = props => (
     <nav>
       <ul style={{ alignItems: 'center' }}>
         <li>
-          <Link to="/mgmt">
+          <Link to="/team">
             <button
               style={{ fontWeight: 'bold' }}
             >
-              MGMT
+              Team
           </button>
           </Link>
         </li>
         <li>
-          <Link to="/artists">
+          <Link to="/roster">
             <button
               style={{ fontWeight: 'bold' }}
             >
-              Artists
+              Roster
           </button>
           </Link>
-        </li>
-        <li>
-          <a href="https://kryptic-sound.myshopify.com/collections/all">
-            <button
-              style={{ fontWeight: 'bold' }}
-            >
-              Store
-          </button>
-          </a>
         </li>
         <li>
           <button
@@ -60,6 +51,15 @@ const Header = props => (
           >
             Contact
           </button>
+        </li>
+        <li>
+          <a href="https://kryptic-sound.myshopify.com/collections/all">
+            <button
+              style={{ fontWeight: 'bold' }}
+            >
+              Store
+          </button>
+          </a>
         </li>
       </ul>
     </nav>
