@@ -38,6 +38,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
