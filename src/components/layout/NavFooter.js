@@ -3,7 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Link from '../Link'
+
+import Link from '../atoms/Link'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +46,7 @@ export default function NavFooter() {
             alignItems="center"
             justify="center"
           >
-            <Link className={classes.link} to="/mgmt">MGMT</Link>
+            <Link className={classes.link} to="/team">Team</Link>
             <Link className={classes.link} to="/artists">Artists</Link>
             <a className={classes.link} href="https://kryptic-sound.myshopify.com/collections/all">Store</a>
             <Link className={classes.link} to="/">Home</Link>
