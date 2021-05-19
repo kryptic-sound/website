@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import SpotifyPlayer from 'react-spotify-player';
 
-import Footer from '../components/layout/Footer'
+import Footer from '../components/atoms/Copyright'
 import NavFooter from '../components/layout/NavFooter'
 
 const useStyles = makeStyles(theme => ({
@@ -53,7 +53,7 @@ const size = {
 const view = 'list'; // or 'coverart'
 const theme = 'black'; // or 'white'
 
-export default function MgmtPage({ data }) {
+export default function RosterPage({ data }) {
   const classes = useStyles()
   return (
     <>
