@@ -2,7 +2,6 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { graphql, Link } from 'gatsby'
 
-import Layout from '../components/layout'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
@@ -14,7 +13,8 @@ import Container from '@material-ui/core/Container'
 import ChevronIcon from '@material-ui/icons/ChevronRight'
 import IconButton from '@material-ui/core/IconButton'
 
-import Footer from '../components/layout/Footer'
+import Layout from '../components/layout'
+import Copyright from '../components/atoms/Copyright'
 import NavFooter from '../components/layout/NavFooter'
 
 const useStyles = makeStyles(theme => ({
@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function MgmtPage({ data }) {
+export default function TeamPage({ data }) {
   const classes = useStyles()
   return (
     <Layout>
@@ -55,7 +55,7 @@ export default function MgmtPage({ data }) {
         <Container className={classes.cardGrid} maxWidth="lg">
           <Grid container spacing={6}>
             {data.allMarkdownRemark.edges.map(({ node }) => (
-              <Grid item key={node} xs={12} sm={6} md={4}>
+              <Grid item key={node} xs={12} sm={6} md={6}>
                 <CardActionArea component="a" className={classes.card}>
                   <Link
                     to={`${node.fields.slug}`}
@@ -100,7 +100,7 @@ export default function MgmtPage({ data }) {
           </Grid>
         </Container>
         <NavFooter />
-        <Footer />
+        <Copyright />
       </div>
       <div id="bg"></div>
     </Layout>
